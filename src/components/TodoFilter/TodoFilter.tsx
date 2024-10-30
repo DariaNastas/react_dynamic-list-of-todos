@@ -10,11 +10,15 @@ export const TodoFilter: React.FC<Props> = ({
   onFilterChange,
 }) => {
   const handleStatusChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    onFilterChange('completedType', event.target.value as Completed);
+    const selectedValue = event.target.value as Completed;
+
+    onFilterChange('completedType', selectedValue);
   };
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    onFilterChange('searchByText', event.target.value);
+    const query = event.target.value.toLowerCase();
+
+    onFilterChange('searchByText', query);
   };
 
   const clearSearch = () => {

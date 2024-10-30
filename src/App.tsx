@@ -69,7 +69,7 @@ export const App: React.FC = () => {
             <div className="block">
               <TodoFilter
                 filterOptions={filters}
-                onFilterChang={updateFilters}
+                onFilterChange={updateFilters}
               />
             </div>
 
