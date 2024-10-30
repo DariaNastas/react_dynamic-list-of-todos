@@ -2,23 +2,23 @@ import { Completed, Filters } from '../../types/Filters';
 
 interface Props {
   filterOptions: Filters;
-  onFilterChang: (key: keyof Filters, value: string | Completed) => void;
+  onFilterChange: (key: keyof Filters, value: string | Completed) => void;
 }
 
 export const TodoFilter: React.FC<Props> = ({
   filterOptions,
-  onFilterChang,
+  onFilterChange,
 }) => {
   const handleStatusChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    onFilterChang('completedType', event.target.value as Completed);
+    onFilterChange('completedType', event.target.value as Completed);
   };
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    onFilterChang('searchByText', event.target.value);
+    onFilterChange('searchByText', event.target.value);
   };
 
   const clearSearch = () => {
-    onFilterChang('searchByText', '');
+    onFilterChange('searchByText', '');
   };
 
   return (
